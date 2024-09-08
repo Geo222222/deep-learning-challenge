@@ -49,15 +49,15 @@ git clone https://github.com/yourusername/deep-learning-challenge.git
 pip install -r requirements.txt
 
 3.	Run the model in Google Colab or a local Jupyter Notebook by following the steps outlined in the project files.
-File Structure
-bash
 
-├── README.md                    # Project documentation
-├── mod_21_mod.h5                # Starter Model saved in HDF5 format
-├── mod_21_mod_opti.h5           # Optimized Model saved in HDF5 format
-├── Starter_code.ipynb           # Colab notebook for model optimization
-├──              
+File Structure
+.
+├── README.md                     # Project documentation
+├── mod_21_mod.h5                 # Starter model saved in HDF5 format
+├── mod_21_mod_opti.h5            # Optimized model saved in HDF5 format
+├── Starter_code.ipynb            # Colab notebook for model optimization
 └── requirements.txt              # Required dependencies
+
 
 Results
 Despite multiple optimization attempts, the final model accuracy fluctuated, with further tuning required to meet the 75% accuracy target consistently.
