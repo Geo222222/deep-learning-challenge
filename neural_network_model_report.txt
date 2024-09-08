@@ -1,0 +1,22 @@
+The goal of this analysis is to create a binary classifier using deep learning to predict whether applicants funded by Alphabet Soup will be successful. By preprocessing the dataset and building a neural network model, the aim is to assist Alphabet Soup in identifying organizations with the best chances of success.
+
+
+Data Preprocessing:
+
+Target variables: 'IS_SUCCESSFUL'
+Feature variables: All remaining columns after removing non-beneficial columns like EIN and NAME.
+Variables to remove: EIN and NAME as they don't contribute to the prediction.
+
+Neurons, Layers, and Activation Functions:
+I selected 3 neurons for the first hidden layer, 14 neurons for the second hidden layer, and 21 neurons for the third hidden layer, with the ReLU activation function for the hidden layers. The output layer has 1 neuron with a sigmoid activation function for binary classification. These configurations were chosen to balance simplicity and accuracy after experimenting with various layer structures.
+
+Model Performance:
+Initially, the model did not meet the 75% accuracy target. However, after further optimizations, the performance improved.
+
+Steps to Increase Model Performance:
+
+I dropped only the EIN column, keeping NAME for additional differentiation between organizations.
+Performed binning on the NAME column, replacing names with fewer than 5 occurrences with "Other".
+Binned the CLASSIFICATION column by grouping classifications with fewer than 100 occurrences.
+Experimented with different neuron counts and added more layers to improve model performance.
+Adjusted the training epochs and applied feature scaling using StandardScaler().
