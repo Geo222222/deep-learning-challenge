@@ -40,17 +40,6 @@ Adjusted the structure by adding neurons and hidden layers.
 Applied feature binning to rare categories.
 Experimented with different training durations by tuning the number of epochs.
 
-
-
-File Structure
-
-.
-├── README.md                     # Project documentation
-├── mod_21_mod.h5                 # Starter model saved in HDF5 format
-├── mod_21_mod_opti.h5            # Optimized model saved in HDF5 format
-├── challenge_optimization.ipynb  # Colab notebook for model optimization
-├── Starter_code.ipynb            # Colab notebook for model base model
-
 Results:
 Despite multiple optimization attempts, the final model accuracy fluctuated, with further tuning required to meet the 75% accuracy target consistently.
 
