@@ -1,55 +1,95 @@
-Alphabet Soup Charity Funding Predictor
-Project Overview
-The Alphabet Soup Charity Funding Predictor is a machine learning project aimed at helping Alphabet Soup, a nonprofit foundation, identify applicants for funding who have the highest likelihood of success. Using deep learning techniques, the project builds a binary classifier model that predicts whether an organization will be successful after receiving funding.
+# 🧠 CryptoClustering
 
-Dataset
-The dataset provided by Alphabet Soup contains over 34,000 records of organizations that have received funding. It includes information such as:
+## 📈 Project Overview
 
-APPLICATION_TYPE: Alphabet Soup application type.
-AFFILIATION: Sector affiliation.
-CLASSIFICATION: Government organization classification.
-USE_CASE: Purpose for funding.
-ORGANIZATION: Type of organization.
-INCOME_AMT: Income classification.
-SPECIAL_CONSIDERATIONS: Special considerations for the application.
-ASK_AMT: Requested funding amount.
-IS_SUCCESSFUL: Whether the organization was successful.
+This project applies **unsupervised machine learning** techniques to cluster cryptocurrencies based on market data. The goal is to identify natural groupings using attributes such as daily and weekly price changes, and visualize these clusters to uncover insights about market behavior.
 
-Project Steps
-1. Data Preprocessing
-The dataset was preprocessed to prepare it for training the model. Key preprocessing steps include:
-Dropping irrelevant columns like EIN.
-Binning infrequent categories in the NAME and CLASSIFICATION columns for better model performance.
-Encoding categorical data using one-hot encoding with pd.get_dummies().
-Scaling the features using StandardScaler() to improve model convergence.
+Built for the **Module 19 Challenge**, this project focuses on:
+- Feature engineering
+- Dimensionality reduction
+- K-means clustering
+- PCA visualization
 
-2. Neural Network Model
-The deep learning model was built using TensorFlow and Keras. The architecture of the model includes:
+## 🧰 Tools & Technologies
 
-Input layer with features derived from the preprocessed dataset.
-Three hidden layers with varying numbers of neurons (3, 14, 21) and ReLU activation functions.
-Output layer with a single neuron using the sigmoid activation function for binary classification.
-3. Model Training and Evaluation
-The model was compiled using the Adam optimizer and binary cross-entropy loss function.
-It was trained using 100 epochs, with a 15% validation split.
-Initial performance did not meet the target accuracy of 75%, but through tuning and optimization, improvements were made.
-4. Optimization Attempts
-To improve the model’s performance:
+- Python
+- Pandas
+- Scikit-learn
+- Plotly
+- hvPlot
+- Jupyter Notebooks
 
-Adjusted the structure by adding neurons and hidden layers.
-Applied feature binning to rare categories.
-Experimented with different training durations by tuning the number of epochs.
+## 📂 Project Structure
 
-Results:
-Despite multiple optimization attempts, the final model accuracy fluctuated, with further tuning required to meet the 75% accuracy target consistently.
+```
+CryptoClustering/
+├── Crypto_Clustering.ipynb      # Main notebook with all analysis steps
+├── crypto_market_data.csv       # Dataset used for clustering
+├── Resources/                   # Contains raw and processed data (if any)
+└── README.md                    # Project documentation
+```
 
-Technologies:
-Python
-Pandas for data manipulation
-scikit-learn for preprocessing
-TensorFlow/Keras for building and training the neural network
+## 🔍 Methodology
 
-Future Improvements:
-Implement advanced hyperparameter tuning, such as grid search or random search.
-Explore different neural network architectures or use ensemble models to improve accuracy.
-Include additional feature engineering and outlier removal strategies.
+1. **Data Preprocessing**
+   - Load and clean crypto market data
+   - Handle missing values and convert text features to numeric where applicable
+
+2. **Feature Engineering**
+   - Focus on `price_change_percentage_24h` and `price_change_percentage_7d`
+   - Normalize values
+
+3. **Clustering**
+   - Apply **K-Means** clustering
+   - Choose optimal number of clusters using the Elbow Method
+
+4. **Dimensionality Reduction**
+   - Use **PCA** to reduce to 3 components for visual inspection
+
+5. **Visualization**
+   - 2D and 3D scatter plots using `hvPlot` and `Plotly`
+   - Cluster label visualizations for interpretation
+
+## 🧪 Results
+
+- Identified **distinct clusters** of cryptocurrencies that share similar behavior over short- and medium-term timeframes
+- PCA revealed strong separability, indicating meaningful groupings
+- Visualizations provide insights for further market segmentation or investment strategies
+
+## 📈 Example Visualizations
+
+![2D Cluster](https://via.placeholder.com/600x300?text=2D+Cluster+Plot)
+![3D PCA](https://via.placeholder.com/600x300?text=3D+PCA+Cluster)
+
+*Replace above placeholders with actual hvPlot/Plotly output screenshots.*
+
+## 🚀 How to Run
+
+1. Clone the repo
+```bash
+git clone https://github.com/Geo222222/CryptoClustering.git
+cd CryptoClustering
+```
+
+2. Launch the notebook:
+```bash
+jupyter notebook Crypto_Clustering.ipynb
+```
+
+3. Run all cells to reproduce results.
+
+## 📌 Future Work
+
+- Expand dataset to include volume, market cap, volatility
+- Experiment with DBSCAN or Hierarchical Clustering
+- Add real-time crypto clustering using API integration
+
+## 📜 License
+
+This project is for academic purposes and experimentation. No commercial license included.
+
+---
+
+**Author:** [Geo222222](https://github.com/Geo222222)  
+**Focus:** Data Science • Crypto Markets • ML Engineering
+
